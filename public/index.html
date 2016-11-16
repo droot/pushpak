@@ -27,16 +27,17 @@
 
         <div class="cover-container">
 
-          <!--<div class="masthead clearfix">
+          <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav class="nav nav-masthead">
+              <!--<h3 class="masthead-brand">Cover</h3>-->
+              <h2>GoPiGo Remote</h2>
+              <!--<nav class="nav nav-masthead">
                 <a class="nav-link active" href="#">Home</a>
                 <a class="nav-link" href="#">Features</a>
                 <a class="nav-link" href="#">Contact</a>
-              </nav>
+              </nav>-->
             </div>
-          </div>-->
+          </div>
 
           <div class="inner cover">
             <!--<h1 class="cover-heading">Cover your page.</h1>
@@ -66,11 +67,11 @@
             </p>
           </div>
 
-          <!--<div class="mastfoot">
+          <div class="mastfoot">
             <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              <p><a href="https://github.com/droot/pushpak">Project Pushpak</a>, by <a href="https://twitter.com/_sunil_">@_sunil_</a></p>
             </div>
-          </div>-->
+          </div>
 
         </div>
 
@@ -88,49 +89,49 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/public/js/ie10-viewport-bug-workaround.js"></script>
 <script>
-  $('#fwdBtn').on('mousedown', function () {
+  $('#fwdBtn').on('mousedown touchstart', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "f" }), "json").done(function(data){
         console.log('mouse down on fwd button');
     });
   })
-  $('#fwdBtn').on('mouseup', function () {
+  $('#fwdBtn').on('mouseup touchend', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "s" }), "json").done(function(data){
         console.log('mouse up on fwd button');
     });
   })
-  $('#leftBtn').on('mousedown', function () {
+  $('#leftBtn').on('mousedown touchstart', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "l" }), "json").done(function(data){
       console.log('mouse down on left button');
     });
   })
-  $('#leftBtn').on('mouseup', function () {
+  $('#leftBtn').on('mouseup touchend', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "s" }), "json").done(function(data){
       console.log('mouse up on left button');
     });
   })
-  $('#rightBtn').on('mousedown', function () {
+  $('#rightBtn').on('mousedown touchstart', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "r" }), "json").done(function(data){
       console.log('mouse down on right button');
     });
   })
-  $('#rightBtn').on('mouseup', function () {
+  $('#rightBtn').on('mouseup touchend', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "s" }), "json").done(function(data){
       console.log('mouse up on right button');
     });
   })
-  $('#backBtn').on('mousedown', function () {
+  $('#backBtn').on('mousedown touchstart', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "b" }), "json").done(function(data){
         console.log('mouse down on back button');
     });
   })
-  $('#backBtn').on('mouseup', function () {
+  $('#backBtn').on('mouseup touchend', function () {
     // business logic...
     $.post("/pi",JSON.stringify({content: "s" }), "json").done(function(data){
         console.log('mouse up on back button');
