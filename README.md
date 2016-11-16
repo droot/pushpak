@@ -1,67 +1,32 @@
-# gopigo
-The GoPiGo is a delightful and complete robot for the Raspberry Pi that turns your Pi into a fully operating robot.  GoPiGo is a mobile robotic platform for the Raspberry Pi developed by [Dexter Industries.](http://www.dexterindustries.com/GoPiGo)  
+# Pushpak
+Pushpak is a web application which implements remote control functionality for
+GoPiGo robot car. This web application runs on Pi which is attached to the
+GoPiGo robot kit and can be accessed in any browser running on your phone or
+Laptop.
 
+The GoPiGo is a delightful and complete robot for the Raspberry Pi that turns your Pi into a fully operating robot.  GoPiGo is a mobile robotic platform for the Raspberry Pi developed by [Dexter Industries.](http://www.dexterindustries.com/GoPiGo)
+
+Here is a screenshot of the remote control web application.
 <img src="pushpak_home.png" width="400" />
-This repository contains Go library for interacting with the GoPiGo robot. This is a port of python library of GoPigo in Go language.
 
 ## Getting Started
 
-Get the source with: `go get -d -u github.com/droot/gopigo`
+### Running remote control web app with pre-built server binaries
+Assuming you are on Raspberry Pi. Clone this repository using following command
+and then run the server binary using following commands:
 
-#### Simple example
+`git clone https://github.com/droot/pushpak`
+`cd pushpak`
+`./bin/server`
 
-```go
-package main
+Now you should have server UP and running. Open your browser and access
+http://<ip-addr-of-pi>:8070
 
-import (
-  "github.com/droot/gopigo"
-  "github.com/kidoman/embd"
-
-  _ "github.com/kidoman/embd/host/all"
-)
-
-func main() {
-  if err := embd.InitI2C(); err != nil {
-    panic(err)
-  }
-  defer embd.CloseI2C()
-
-  bus := embd.NewI2CBus(1)
-
-  // create GoPiGo instance.
-  gp := gopigo.New(bus)
-
-  // move GoPiGo forward by 40 cms
-  err := gp.fwd(40)
-
-  // move GoPiGo backward
-  err = gp.Bwd(0)
-
-  // make GoPiGo stop
-  err = gp.Stop()
-
-  // make GoPiGo take Left turn
-  err = gp.Left()
-
-  // make GoPiGo take right turn
-  err = gp.Right()
-
-
-  // Read Battery level of GoPiGo
-  volt, err := gp.BatteryVoltage()
-
-
-  .....
-}
-
-```
-
-## API Documentation
-API documentation is available at https://godoc.org/github.com/droot/gopigo
+Use Up/Down/Left/Right/Stop arrow to control your GoPiGo.
 
 ## Credits
 Special Thanks to Dexter Industries for providing [@GoPiGo kit](http://www.dexterindustries.com/shop/gopigo-starter-kit-2/) for the development.
 
 ## Need help ?
- * Issues: https://github.com/droot/gopigo/issues
+ * Issues: https://github.com/droot/pushpak/issues
  * twitter: [@droot](https://twitter.com/_sunil_)
