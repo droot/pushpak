@@ -40,11 +40,16 @@ func (s *server) setup() error {
 
 func (s *server) setupRoutes() *mux.Router {
   r := mux.NewRouter().StrictSlash(false)
+  r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, "./public/index.html")
+  })
+
   r.PathPrefix("/public/").Handler(
     http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 
   pi := r.Path("/pi").Subrouter()
   pi.Methods("POST").HandlerFunc(s.handlePICommands)
+
   return r
 }
 
