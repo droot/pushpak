@@ -17,9 +17,10 @@ and then run the server binary using following commands:
 * `./bin/server`
 
 Now you should have server UP and running. Open your browser and access
-http://<ip-addr-of-pi>:8070
+http://[ip-addr-of-pi]:8070
 
 Here is a screenshot of the remote control web application.
+<br />
 <img src="pushpak_home.png" width="400" />
 
 Use Up/Down/Left/Right/Stop arrow to control your GoPiGo.
