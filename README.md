@@ -3,7 +3,7 @@ The GoPiGo is a delightful and complete robot for the Raspberry Pi that turns yo
 
 ![ GoPiGo ](https://raw.githubusercontent.com/DexterInd/GoPiGo/master/GoPiGo_Chassis-300.jpg)
 ![ Pushpak Homepage ](pushpak_home.png | width=100)
-
+<img src="pushpak_home.png" width="200" />
 This repository contains Go library for interacting with the GoPiGo robot. This is a port of python library of GoPigo in Go language.
 
 ## Getting Started
